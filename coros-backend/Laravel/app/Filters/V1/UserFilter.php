@@ -8,12 +8,12 @@ use App\Filters\ApiFilter;
 class UserFilter extends ApiFilter {
   protected $safeParms  = [
     'name' => ['eq'],
-    'numTelefono'=>['eq'],
-    'email'=>['eq']
+    'email' => ['eq'],
+    'phone' => ['eq'],
+    'type' => ['eq'],
   ];
 
   protected $columnMap = [
-    'numTelefono' => 'phone',
 ];
 
 protected $operatorMap = [

@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
         Schema::create('paquetes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('proveedor_id');
+            $table->integer('empresa_id');
             $table->string('name');
             $table->float('precio');
-            $table->string('archivos')->nullable();
+            $table->string('imagen')->nullable();
+            $table->string('audio')->nullable();
+            $table->string('video')->nullable();
             $table->string('descripcion');
             $table->timestamps();
-
-            $table->foreign('proveedor_id')->references('id')->on('proveedors');
         });
     }
 

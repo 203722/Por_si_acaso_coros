@@ -1,5 +1,4 @@
 <?php
-use App\Http\Controllers\contratacionesController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('agregar');
+    return view('welcome');
 });
-Route::get('/contratacion', 'App\Http\Controllers\contratacionesController@index');
-Route::get('/contratacion/{id}', 'App\Http\Controllers\contratacionesController@user');
-Route::post('/store', [contratacionesController::class, 'store'])->name('contrataciones.store');
-Route::get('/user/{id}', [contratacionesController::class, 'user'])->name('contrataciones.user');
